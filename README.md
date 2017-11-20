@@ -1,2 +1,2 @@
 # node-express-rest
-Sample project to explore node JS, npm, bower, gulp, es
+Web application to explore node JS, npm, bower, gulp, express
