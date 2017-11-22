@@ -8,29 +8,23 @@ app.use(express.static('public'));
 
 app.set('views', 'src/views');
 
-//using Jade
-//app.set('view engine', 'Jade');
-
-//using express-handlebars
-/*var handlebars = require('express-handlebars');
-app.engine('.hbs', handlebars({
-    extname: '.hbs'
-}));
-app.set('view engine', '.hbs');*/
-
 //using ejs
 app.set('view engine', 'ejs');
 
+//navigation
+var nav= [{ Link: '/Books', Text: 'Book' }, { Link: '/Authors', Text: 'Author' }]
+
+//defining book router
+var bookRouter = require('./src/routes/bookRoutes')(nav);
+app.use('/Books', bookRouter);
+
 app.get('/', function (req, res) {
     res.render('index', {
-        list: ['a', 'b'],
-        title: "Hello from render"
+        nav: [{ Link: '/Books', Text: 'Books' }, { Link: '/Authors', Text: 'Authors' }],
+        title: 'Hello from render'
     });
 });
 
-app.get('/books', function (req, res) {
-    res.send('Hello books');
-});
 
 app.listen(port, function (err) {
     console.log('running on port ' + port);
