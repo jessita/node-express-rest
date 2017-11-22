@@ -12,11 +12,14 @@ app.set('views', 'src/views');
 //app.set('view engine', 'Jade');
 
 //using express-handlebars
-var handlebars = require('express-handlebars');
+/*var handlebars = require('express-handlebars');
 app.engine('.hbs', handlebars({
     extname: '.hbs'
 }));
-app.set('view engine', '.hbs');
+app.set('view engine', '.hbs');*/
+
+//using ejs
+app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
     res.render('index', {
