@@ -44,7 +44,7 @@ var router = function (nav) {
             });
         });
 
-    // /books/single route
+    // /books/bookid route
     bookRouter.route('/:id')
         .get(function (req, res) {
             var id = req.params.id;
