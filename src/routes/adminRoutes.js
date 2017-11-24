@@ -1,40 +1,39 @@
 var express = require('express');
 var mongodb = require('mongodb').MongoClient;
 var adminRouter = express.Router();
+
 var books = [
     {
-        "title": "The Lightning Thief",
-        "author": "Rick Riordan",
-        "genre": "Fantasy",
-        "read": false
-    }
-    ,
+        'title': 'The Lightning Thief',
+        'author': 'Rick Riordan',
+        'genre': 'Fantasy',
+        'read': false
+    },
     {
-        "title": "Harry Potter and the Prisoner of Azkaban",
-        "author": "J. K. Rowling",
-        "genre": "Fantasy fiction",
-        "read": false
-    }
-    ,
+        'title': 'Harry Potter and the Prisoner of Azkaban',
+        'author': 'J. K. Rowling',
+        'genre': 'Fantasy fiction',
+        'read': false
+    },
     {
-        "title": "The Island of Adventure",
-        "author": "Enid Blyton",
-        "genre": "Adventure fiction",
-        "read": false
-    }
-    ,
+        'title': 'The Island of Adventure',
+        'author': 'Enid Blyton',
+        'genre': 'Adventure fiction',
+        'read': false
+    },
     {
-        "title": "Eragon",
-        "author": "Christopher Paolini",
-        "genre": "fantasy",
-        "read": false
+        'title': 'Eragon',
+        'author': 'Christopher Paolini',
+        'genre': 'fantasy',
+        'read': false
     }
 ];
+
 var router = function (nav) {
 
     adminRouter.route('/')
         .get(function (req, res) {
-            res.send("Page work in progress");
+            res.send('Page work in progress');
         });
 
     adminRouter.route('/addBooks')
@@ -51,6 +50,6 @@ var router = function (nav) {
 
     return adminRouter;
 
-}
+};
 
 module.exports = router;
