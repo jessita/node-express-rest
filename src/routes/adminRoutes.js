@@ -7,25 +7,29 @@ var books = [
         'title': 'The Lightning Thief',
         'author': 'Rick Riordan',
         'genre': 'Fantasy',
-        'read': false
+        'read': false,
+        'bookId': 28187
     },
     {
         'title': 'Harry Potter and the Prisoner of Azkaban',
         'author': 'J. K. Rowling',
         'genre': 'Fantasy fiction',
-        'read': false
+        'read': false,
+        'bookId': 5
     },
     {
         'title': 'The Island of Adventure',
         'author': 'Enid Blyton',
         'genre': 'Adventure fiction',
-        'read': false
+        'read': false,
+        'bookId': 17492
     },
     {
         'title': 'Eragon',
         'author': 'Christopher Paolini',
         'genre': 'fantasy',
-        'read': false
+        'read': false,
+        'bookId': 113436
     }
 ];
 
