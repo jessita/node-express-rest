@@ -22,7 +22,7 @@ app.set('views', 'src/views');
 app.set('view engine', 'ejs');
 
 //navigation
-var nav= [{ Link: '/Books', Text: 'Book' }, { Link: '/Authors', Text: 'Author' }, { Link: '/Admin', Text: 'Admin' }];
+var nav= [{ Link: '/Books', Text: 'Books' }, { Link: '/Authors', Text: 'Authors' }, { Link: '/Admin', Text: 'Admin' }];
 
 //defining book router
 var bookRouter = require('./src/routes/bookRoutes')(nav);

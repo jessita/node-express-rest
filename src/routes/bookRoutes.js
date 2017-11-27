@@ -5,6 +5,12 @@ var bookRouter = express.Router();
 
 var router = function (nav) {
 
+    bookRouter.use(function(req,res,next){
+        if (!req.user) {
+            res.redirect('/');
+        }
+        next();
+    });
     // /books route
     bookRouter.route('/')
         .get(function (req, res) {

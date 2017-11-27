@@ -8,7 +8,7 @@ var router = function (nav) {
 
     authRouter.route('/signUp')
         .post(function (req, res) {
-            console.log(req.body);
+            console.log(req.params);
             var url = 'mongodb://localhost:27017/libraryApp';
             mongodb.connect(url, function (err, db) {
                 var collection = db.collection('users');
@@ -24,14 +24,20 @@ var router = function (nav) {
             });
         });
 
-    authRouter.route('/signIn')
-        .post(passport.authenticate('local', {
-            failureRedirect: '/'
-        }), function (req, res) {
+
+    authRouter.route('/signIn').post(passport.authenticate('local', { failureRedirect: '/' }),
+        function (req, res) {
             res.redirect('/auth/profile');
-        });
+        }
+    );
 
     authRouter.route('/profile')
+        .all(function (req, res, next) {
+            if (!req.user) {
+                res.redirect('/');
+            }
+            next();
+        })
         .get(function (req, res) {
             res.json(req.user);
         });
